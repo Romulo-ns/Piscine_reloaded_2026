@@ -6,11 +6,11 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 14:36:40 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/04/15 15:03:10 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/04/16 19:38:22 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_ft(int *nbr)
+void	ft_ft(int *nbr)
 {
-    *nbr = 42;
+	*nbr = 42;
 }

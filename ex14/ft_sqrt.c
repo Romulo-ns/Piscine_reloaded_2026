@@ -6,22 +6,22 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 19:11:00 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/04/15 19:37:16 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/04/16 19:14:50 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_sqrt(int nb)
+int	ft_sqrt(int nb)
 {
-    int i;
+	int	i;
 
-    if (nb < 0)
-        return (0);
-    i = 0;
-    while (i * i <= nb)
-    {
-        if (i * i == nb)
-            return (i);
-        i++;
-    }
-    return (0);
+	if (nb < 0)
+		return (0);
+	i = 0;
+	while (i * i <= nb)
+	{
+		if (i * i == nb)
+			return (i);
+		i++;
+	}
+	return (0);
 }

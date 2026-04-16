@@ -6,22 +6,22 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 14:25:16 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/04/15 14:35:54 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/04/16 19:39:30 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_is_negative(int n)
+void	ft_is_negative(int n)
 {
-    if (n >= 0)
-    {
-        write(1,"P",1);  
-    }
-    else 
-    {
-        write(1,"N",1); 
-    }
+	if (n >= 0)
+	{
+		write(1, "P", 1);
+	}
+	else
+	{
+		write(1, "N", 1);
+	}
 }
 
 // int main()

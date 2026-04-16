@@ -6,17 +6,19 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 15:04:24 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/04/15 15:23:00 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/04/16 19:34:21 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <unistd.h>
 
-void ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
-    int x = *a;
-    *a = *b;
-    *b = x;
+	int	x;
+
+	x = *a;
+	*a = *b;
+	*b = x;
 }
 
 // int main()

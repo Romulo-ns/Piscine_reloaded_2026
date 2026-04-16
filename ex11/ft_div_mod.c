@@ -6,15 +6,16 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 16:17:02 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/04/15 16:31:43 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/04/16 19:32:59 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-void ft_div_mod(int a, int b, int *div, int *mod)
+
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-    *div = a / b;
-    *mod = a % b;
+	*div = a / b;
+	*mod = a % b;
 }
 
 // int main()
