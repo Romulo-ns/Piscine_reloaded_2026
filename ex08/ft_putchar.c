@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/15 14:25:16 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/04/16 20:52:01 by romdo-na         ###   ########.fr       */
+/*   Created: 2026/04/16 20:36:23 by romdo-na          #+#    #+#             */
+/*   Updated: 2026/04/16 20:51:04 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c);
-
-void	ft_is_negative(int n)
+void	ft_putchar(char c)
 {
-	if (n >= 0)
-	{
-		ft_putchar('P');
-	}
-	else
-	{
-		ft_putchar('N');
-	}
+	write(1, &c, 1);
 }
-
-// int main()
-// {
-//     int a = 1;
-//     int b = 0;
-//     int c = -1;
-
-//     ft_is_negative(a);
-//     ft_is_negative(b);
-//     ft_is_negative(c);
-//     return (0);
-// }

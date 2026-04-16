@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 17:44:19 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/04/16 19:18:58 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/04/16 21:11:54 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ int	ft_recursive_factorial(int nb)
 	return (nb * ft_recursive_factorial(nb - 1));
 }
 
-int	main(void)
-{
-	int	x;
+// int	main(void)
+// {
+// 	int	x;
 
-	x = 5;
-	x = ft_recursive_factorial(x);
-	printf("%i", x);
-	return (0);
-}
+// 	x = 5;
+// 	x = ft_recursive_factorial(x);
+// 	printf("%i", x);
+// 	return (0);
+// }
