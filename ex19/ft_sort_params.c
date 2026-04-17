@@ -6,19 +6,27 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 14:25:01 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/04/16 18:50:32 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:10:13 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
 void	ft_putstr(char *str)
 {
-	while (*str)
+	int i;
+
+	i = 0;
+	while (str[i])
 	{
-		write(1, str, 1);
-		str++;
+		ft_putchar(str[i]);
+		i++;
 	}
 }
 
@@ -68,7 +76,7 @@ int	main(int argc, char **argv)
 	while (i < argc)
 	{
 		ft_putstr (argv[i]);
-		write (1, "\n", 1);
+		ft_putchar ('\n');
 		i++;
 	}
 	return (0);
