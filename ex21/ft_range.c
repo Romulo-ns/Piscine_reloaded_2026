@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 13:00:49 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/04/17 11:28:29 by romdo-na         ###   ########.fr       */
+/*   Created: 2026/04/17 11:17:50 by romdo-na          #+#    #+#             */
+/*   Updated: 2026/04/17 11:18:52 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putchar(char c);
-
-int	main(int argc, char **argv)
+int	*ft_range(int min, int max)
 {
+	int	*arr;
+	int	size;
 	int	i;
-	int	j;
 
-	i = 1;
-	while (i < argc)
+	if (min >= max)
+		return (NULL);
+	size = max - min;
+	arr = (int *)malloc(sizeof(int) * size);
+	if (!arr)
+		return (NULL);
+	i = 0;
+	while (i < size)
 	{
-		j = 0;
-		while (argv[i][j])
-		{
-			ft_putchar(argv[i][j]);
-			j++;
-		}
-		ft_putchar('\n');
+		arr[i] = min + i;
 		i++;
 	}
-	return (0);
+	return (arr);
 }

@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 13:00:49 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/04/17 11:28:29 by romdo-na         ###   ########.fr       */
+/*   Created: 2026/04/17 11:23:52 by romdo-na          #+#    #+#             */
+/*   Updated: 2026/04/17 11:37:26 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-void	ft_putchar(char c);
-
-int	main(int argc, char **argv)
+typedef struct s_point
 {
-	int	i;
-	int	j;
+	int	x;
+	int	y;
+}	t_point;
 
-	i = 1;
-	while (i < argc)
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			ft_putchar(argv[i][j]);
-			j++;
-		}
-		ft_putchar('\n');
-		i++;
-	}
-	return (0);
-}
+#endif
