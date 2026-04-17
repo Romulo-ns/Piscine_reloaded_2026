@@ -5,28 +5,28 @@
 #                                                     +:+ +:+         +:+      #
 #    By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/04/17 11:53:14 by romdo-na          #+#    #+#              #
-#    Updated: 2026/04/17 11:53:17 by romdo-na         ###   ########.fr        #
+#    Created: 2026/04/17 11:59:08 by romdo-na          #+#    #+#              #
+#    Updated: 2026/04/17 11:59:11 by romdo-na         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = ft_display_file
 
-SRC = srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strcmp.c \
-	  srcs/ft_strlen.c srcs/ft_swap.c
+SRC = main.c
 
-OFILES = ft_putchar.o ft_putstr.o ft_strcmp.o \
-		ft_strlen.o ft_swap.o
+OFILES = main.o
 
-all: $(NAME)
+all : $(NAME)
+
 
 $(NAME) :
-	gcc -Wall -Werror -Wextra -c $(SRC) && ar rc $(NAME) $(OFILES) && ranlib $(NAME)
-	
-clean:
-	/bin/rm -f $(OFILES)
+	gcc -Wall -Wextra -Werror -c $(SRC)
+	gcc -o $(NAME) $(OFILES)
 
-fclean: clean
-	/bin/rm -f $(NAME)
+clean :
+	rm -f $(OFILES)
 
-re: fclean all
+fclean : clean
+	rm -f $(NAME)
+
+re : fclean all

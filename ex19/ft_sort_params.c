@@ -6,9 +6,16 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 14:25:01 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/04/17 11:45:31 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/04/17 11:50:10 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	print_args(int length, char **argv)
 {
