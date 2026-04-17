@@ -6,12 +6,9 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 11:59:42 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/04/17 12:42:31 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/04/17 13:09:24 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-#include <fcntl.h>
 
 #include <unistd.h>
 #include <fcntl.h>
