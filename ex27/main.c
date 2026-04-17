@@ -6,62 +6,55 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 11:59:42 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/04/17 12:00:54 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:42:31 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <fcntl.h>
+
 #include <unistd.h>
+#include <fcntl.h>
 
-void	ft_putchar(char c, int std)
-{
-	write(std, &c, 1);
-}
-
-void	ft_putstr(char *str, int std)
+void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
-		ft_putchar(str[i++], std);
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }
 
-int	show_char(char **argv)
+void	ft_display_file(char *file)
 {
 	int		fd;
-	int		ret;
-	char	temp[1];
+	int		bytes;
+	char	buffer[1024];
 
-	ret = 1;
-	fd = open(argv[1], O_RDONLY);
-	if (fd == -1)
-		return (0);
-	while (ret > 0)
+	fd = open(file, O_RDONLY);
+	if (fd < 0)
 	{
-		ret = read(fd, temp, 1);
-		if (ret == -1)
-			return (0);
-		if (ret > 0)
-			ft_putchar(temp[0], 1);
+		ft_putstr("Cannot read file.\n");
+		return ;
 	}
-	ret = close(fd);
-	if (ret == -1)
-		return (0);
-	return (1);
+	bytes = read(fd, buffer, 1024);
+	while (bytes > 0)
+	{
+		write(1, buffer, bytes);
+		bytes = read(fd, buffer, 1024);
+	}
+	close(fd);
 }
 
 int	main(int argc, char **argv)
 {
-	if (argc == 1)
-		ft_putstr("File name missing.\n", 2);
-	else if (argc == 2)
-	{
-		if (show_char(argv) == 0)
-			return (0);
-	}
-	else
-		ft_putstr("Too many arguments.\n", 2);
+	if (argc < 2)
+		return (ft_putstr("File name missing.\n"), 1);
+	if (argc > 2)
+		return (ft_putstr("Too many arguments.\n"), 1);
+	ft_display_file(argv[1]);
 	return (0);
 }

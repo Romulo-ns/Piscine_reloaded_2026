@@ -6,71 +6,60 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 14:25:01 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/04/17 11:50:10 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:33:01 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
-void	ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write(1, &c, 1);
+	while (*str)
+		ft_putchar(*str++);
 }
 
-void	print_args(int length, char **argv)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	while (i < length)
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			ft_putchar(argv[i][j]);
-			j++;
-		}
-		ft_putchar('\n');
-		i++;
-	}
-}
-
-int	ft_strcmp(char *str1, char *str2)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (str1[i] == str2[i] && str1[i] && str2[i])
+	while (s1[i] == s2[i] && s1[i] != !0 && s2[i] != !0)
 		i++;
-	return (str1[i] - str2[i]);
+	return (s1[i] - s2[i]);
 }
 
-void	sort_args(int length, char **argv)
+void	ft_print_params(int argc, char **argv)
 {
-	int		i;
-	char	*temp;
+	int	i;
 
 	i = 1;
-	while (i < length - 1)
+	while (i < argc)
 	{
-		if (ft_strcmp(argv[i], argv[i + 1]) > 0)
-		{
-			temp = argv[i];
-			argv[i] = argv[i + 1];
-			argv[i + 1] = temp;
-			i = 1;
-		}
-		else
-		{
-			i++;
-		}
+		ft_putstr(argv[i++]);
+		ft_putchar('\n');
 	}
 }
 
 int	main(int argc, char **argv)
 {
-	sort_args(argc, argv);
-	print_args(argc, argv);
+	int		i;
+	char	*swap;
+
+	i = 1;
+	if (argc > 1)
+	{
+		while (i < argc - 1)
+		{
+			if (ft_strcmp(argv[i], argv[i + 1]) > 0)
+			{
+				swap = argv[i];
+				argv[i] = argv[i + 1];
+				argv[i + 1] = swap;
+				i = 0;
+			}
+			i++;
+		}
+		ft_print_params(argc, argv);
+	}
 	return (0);
 }

@@ -6,27 +6,26 @@
 #    By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/17 11:59:08 by romdo-na          #+#    #+#              #
-#    Updated: 2026/04/17 11:59:11 by romdo-na         ###   ########.fr        #
+#    Updated: 2026/04/17 12:36:21 by romdo-na         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_display_file
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
 
-SRC = main.c
+SRC = ft_display_file.c
+OBJ = $(SRC:.c=.o)
 
-OFILES = main.o
+all: $(NAME)
 
-all : $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
+clean:
+	rm -f $(OBJ)
 
-$(NAME) :
-	gcc -Wall -Wextra -Werror -c $(SRC)
-	gcc -o $(NAME) $(OFILES)
-
-clean :
-	rm -f $(OFILES)
-
-fclean : clean
+fclean: clean
 	rm -f $(NAME)
 
-re : fclean all
+re: fclean all
